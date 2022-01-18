@@ -23,21 +23,18 @@ var target = 6;
 
 
 var twoSum = function(nums, target) {
-    var flag = false;
-    for(var i = 0; i < nums.length; i++){
-        for(var j = i + 1; j <= nums.length; j++){
-            if(nums[i] + nums[j] == target){
-                flag = true;
-                break;
-            }
-        }
-        if(flag)
-            break;
+  var flag = false;
+  for (var i = 0; i < nums.length; i++) {
+    for (var j = i + 1; j <= nums.length; j++) {
+      if (nums[i] + nums[j] == target) {
+        flag = true;
+        break;
+      }
     }
-    if(flag)
-        return [i, j];
-    else
-        return [];
+    if (flag)
+      break;
+  }
+  return flag? [i, j] : [];
 };
 
 var a = twoSum(nums, target);

@@ -25,24 +25,23 @@ Explanation: 342 + 465 = 807.
  */
 
 var addTwoNumbers = function(l1, l2) {
-    var value = 0;
-    var carry = 0;
-    var temp = 0;
-    var head = new ListNode(0);
-    var l = head;
-    while((l1 != null)||(l2 != null)){
-        temp = (((l1==null)?0:l1.val) + ((l2==null)?0:l2.val)+ carry)%10;
-        carry = Math.floor((((l1==null)?0:l1.val) + ((l2==null)?0:l2.val) + carry)/10);
-        l.next = new ListNode(temp);
-        l = l.next;
-        if(l1!=null)
-            l1=l1.next;
-        if(l2!=null)
-            l2=l2.next;
-    }
-    if((carry==1)){
-        l.next = new ListNode(carry);
-    }
-    
-    return head.next;
+  var carry = 0;
+  var temp = 0;
+  var head = new ListNode(0);
+  var l = head;
+  while (l1 != null || l2 != null) {
+    temp = (((l1==null)?0:l1.val) + ((l2==null)?0:l2.val)+ carry)%10;
+    carry = Math.floor((((l1==null)?0:l1.val) + ((l2==null)?0:l2.val) + carry)/10);
+    l.next = new ListNode(temp);
+    l = l.next;
+    if(l1!=null)
+      l1=l1.next;
+    if(l2!=null)
+      l2=l2.next;
+  }
+  if(carry == 1){
+    l.next = new ListNode(carry);
+  }
+  
+  return head.next;
 };

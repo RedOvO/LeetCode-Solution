@@ -27,20 +27,20 @@ Explanation: The answer is "wke", with the length of 3.
 s = "abcabcbb";
 
 var lengthOfLongestSubstring = function(s) {
-    var front = 0;
-    var end = 0;
-    var length = 0;
-    for(let i = 0; i < s.length; i++){
-        if(!s.substring(front, end).includes(s[i])){
-            end++;
-        }
-        else{
-            front = s.substring(front, end).indexOf(s[i]) + front + 1;
-            end++;
-        }
-        length = (length < (end - front))? (end - front) : length;
+  var front = 0;
+  var end = 0;
+  var length = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (!s.substring(front, end).includes(s[i])) {
+      end++;
     }
-    return length;
+    else {
+      front = s.substring(front, end).indexOf(s[i]) + front + 1;
+      end++;
+    }
+    length = (length < (end - front))? (end - front) : length;
+  }
+  return length;
 };
 
 var length = lengthOfLongestSubstring(s);

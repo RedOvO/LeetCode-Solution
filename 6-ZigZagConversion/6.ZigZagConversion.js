@@ -35,38 +35,38 @@ var s = "PAYPALISHIRING"
 var numRows = "4"
 
 var convert = function(s, numRows) {
-    var i,j = 0;
-    var order = true;
-    if(numRows == 1){
-        return s;
-    }
+  var i,j = 0;
+  var order = true;
+  if(numRows == 1){
+    return s;
+  }
 
-    var a = new Array();
-    var res = "";
-    for (i = 0; i < numRows; i++){
-        a.push(new Array());
+  var a = new Array();
+  var res = "";
+  for (i = 0; i < numRows; i++){
+    a.push(new Array());
+  }
+  for (i = 0 ; i < s.length; i++){
+    a[j].push(s[i]);
+    if(order)
+      j++;
+    else
+      j--;
+    if(j == numRows){
+      order = false;
+      j = j - 2;
     }
-    for (i = 0 ; i < s.length; i++){
-        a[j].push(s[i]);
-        if(order)
-            j++;
-        else
-            j--;
-        if(j == numRows){
-            order = false;
-            j = j - 2;
-        }
-        else if(j == -1){
-            order = true;
-            j = j + 2;
-        }
+    else if(j == -1){
+      order = true;
+      j = j + 2;
     }
-    a.forEach((str, row)=>{
-        str.forEach((char, col)=>{
-            res += char;
-        })
+  }
+  a.forEach((str, row)=>{
+    str.forEach((char, col)=>{
+      res += char;
     })
-    return res;
+  })
+  return res;
 };
 
 var res = convert(s, numRows);

@@ -27,21 +27,20 @@ assume that your function returns 0 when the reversed integer overflows.
 var x = 1534236469;
 
 var reverse = function(x) {
-    var s = x.toString();
-    var res = Number.parseInt(s.split("").reverse().join(""));
-    if(x >= 0){
-        if(res > (Math.pow(2, 31) - 1))
-            return 0;
-        else
-            return res;
-    }
-    else{
-        if(res > Math.pow(2, 31))
-            return 0;
-        else
-             return -res;
-    }
-
+  var s = x.toString();
+  var res = Number.parseInt(s.split("").reverse().join(""));
+  if (x >= 0) {
+    if(res > (Math.pow(2, 31) - 1))
+      return 0;
+    else
+      return res;
+  }
+  else {
+    if (res > Math.pow(2, 31))
+      return 0;
+    else
+      return -res;
+  }
 };
 
 var y = reverse(x);
