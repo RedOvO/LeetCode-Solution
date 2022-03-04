@@ -1,7 +1,7 @@
 /*
  * @Author: Naluhodo
  * @Date: 2022-03-02 11:48:51
- * @LastEditTime: 2022-03-02 11:57:56
+ * @LastEditTime: 2022-03-04 19:46:21
  * @LastEditors: Naluhodo
  * @Description: https://leetcode-cn.com/problems/sum-root-to-leaf-numbers/
  */
@@ -13,17 +13,6 @@
  * b. 仅有一个子节点的节点，从根节点到该节点的路径无效，不计入最终和
  * c. 其余节点正常深搜遍历
  */
-
-class TreeNode {
-  val: number
-  left: TreeNode | null
-  right: TreeNode | null
-  constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
-    this.val = (val===undefined ? 0 : val)
-    this.left = (left===undefined ? null : left)
-    this.right = (right===undefined ? null : right)
-  }
-}
 
 function sumNumbers(root: TreeNode | null): number {
   return dfs(0, root);
